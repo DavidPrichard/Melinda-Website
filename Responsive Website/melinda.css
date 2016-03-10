@@ -1,0 +1,452 @@
+/*
+Table of Contents:
+
+	1. Reset
+
+	2. HTML Elements
+
+	3. IDs, Classes and Selectors
+
+	4. Color Scheme
+
+	5. Pseudo-Elements and Pseudo-Classes
+
+	6. Animations
+
+	7. Media Queries
+*/
+
+
+/* 1. Reset - a consistent baseline for many different browsers. */
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+small {
+	font-size: 70%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+	margin: 0 1em;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace; /* Not a typo */
+	font-size: 1em;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+button,
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+fieldset {
+	padding: 0.5em;
+	margin: 0;
+	border: 1px solid #ccc;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+main,
+details,
+summary {
+	display: block;
+}
+
+template {
+	display: none;
+}
+
+button {
+	overflow: visible;
+}
+
+textarea {
+	overflow: auto;
+}
+
+/* 2. HTML Elements */
+
+body {
+	min-height: 100vh;
+	font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-feature-settings: "kern", "liga";
+	-webkit-font-feature-settings: "kern", "liga";
+	font-variant-ligatures: common-ligatures;
+	font-kerning: normal;
+}
+
+main {
+	margin: 0 0 0 20vw;
+	font-size: 17px;
+}
+
+header {
+	margin-bottom: 2rem;
+	box-shadow: 0 8px 10px -13px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	font: 100 56px/0.7 "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	text-align: center;
+}
+
+h2 {
+	margin: 0.5em 0;
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 1;
+}
+
+h3 {
+	margin: 1em 0 0.5em;
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 1;
+}
+
+p {
+	margin: 0.5em 0 1em;
+	line-height: 1.4;
+}
+
+hr {
+	margin: 3em 0 1.5em;
+}
+
+blockquote {
+	padding: 0.5em;
+	margin-top: 3em;
+	text-align: center;
+}
+
+cite {
+}
+
+/* 3. IDs, Classes, and Selectors */
+
+#title {
+	padding: 0.5em;
+}
+
+#title > a {
+	font-weight: 100;
+}
+
+#desktop-navigation {
+	position: fixed;
+	height: 100vh;
+	width: 20vw;
+	min-width: 160px;
+	text-align: center;
+}
+
+#mobile-navigation {
+	display: none;
+	text-align: center;
+}
+
+svg.zips {
+	height: 100%;
+	width: 100%;
+}
+
+.navbar {
+	list-style: none;
+	padding: 0;
+	margin: 3em 0;
+	position: relative;
+	z-index: 100;
+}
+
+.nav-link {
+	display: block;
+	padding: 1rem 0;
+	font: 300 1.5em	"Lato";
+	-webkit-font-smoothing: subpixel-antialiased;
+	//fixes a bug in safari on OS X that prevents proper antialiasing from being used.
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.photo {
+	float: right;
+	clear: both;
+	max-width: 30%;
+}
+
+.column {
+	max-width: 600px;
+	width: 80%;
+	margin: auto; /* centers the column */
+}
+
+.semesters {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+td {
+	padding: 0.5em;
+}
+
+.semesters td:first-child {
+	vertical-align: top;
+	white-space: nowrap;
+	text-align: right;
+	font-weight: bolder;
+}
+
+.semesters > li > b {
+	font-size: 1em;
+}
+
+.footnotes > li {
+	margin: 0.5em 0;
+	font-size: 0.9em;
+}
+
+#footer {
+	margin: 0;
+	padding: 8px 0;
+	text-align: center;
+}
+
+/* 4. Color Scheme */
+
+a {
+	color: #d44;
+	font-weight: bold;
+}
+
+#desktop-navigation,
+#mobile-navigation {
+	background-color: #f00;
+}
+
+#leftzip {
+	fill: #ffe1c4;
+}
+
+#rightzip {
+	fill: #000;
+}
+
+.nav-link {
+	color: #fff;
+}
+
+.current-page {
+	background-color: #000;
+}
+
+#title {
+	background-color: #fff;
+}
+
+#title > a {
+	color: #000;
+}
+
+blockquote > p::before,
+blockquote > p::after {
+	color: #f55;
+}
+
+/* 5. Pseudo-Elements and Pseudo-Classes */
+
+a:hover,
+a:focus {
+	color: #f00;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+	color: #000;
+	background-color: #ffe1c4;
+}
+
+blockquote > p::before {
+	font-size: 2.5em;
+	line-height: 0.5em;
+	content: "“";
+	position: relative;
+	top: 0.2em;
+}
+
+blockquote > p::after {
+	font-size: 2.5em;
+	line-height: 0.5em;
+	content: "”";
+	position: relative;
+	top: 0.2em;
+}
+
+.footnotes > li:target {
+	background-color: rgba(255,0,0,0.3);
+}
+
+::selection {
+background: #ff6456;
+color: #000;
+}
+
+::-moz-selection {
+background: #ff6456;
+color: #000;
+}
+
+/* 6. Animations and Transitions */
+
+/* 7. Media Queries */
+
+@media (max-width: 800px) {
+
+	#desktop-navigation {
+		display: none;
+	}
+
+	#mobile-navigation {
+		display: block;
+		margin-bottom: 2rem;
+	}
+
+	main,
+	header,
+	.navbar {
+		margin: 0;
+	}
+
+	h1 {
+		font-size: 46px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	.photo {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	h1{
+		font-size: 38px;
+	}
+}
